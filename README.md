@@ -1,6 +1,10 @@
 # firefly_rk3288_docker_kernel
 Run docker in rk3288
 
+uname -a:
+
+>Linux firefly 4.4.194 #4 SMP Sat May 7 11:32:34 CST 2022 armv7l armv7l armv7l GNU/Linux
+
 Supported kernel configs.
 
 >Generally Necessary:
@@ -44,24 +48,24 @@ Supported kernel configs.
 >    (cgroup swap accounting is currently enabled)
 >- CONFIG_MEMCG_KMEM: enabled
 >- CONFIG_IOSCHED_CFQ: enabled
->- CONFIG_CFQ_GROUP_IOSCHED: missing
->- CONFIG_BLK_CGROUP: missing
->- CONFIG_BLK_DEV_THROTTLING: missing
->- CONFIG_CGROUP_PERF: missing
->- CONFIG_CGROUP_HUGETLB: missing
->- CONFIG_NET_CLS_CGROUP: missing
->- CONFIG_CGROUP_NET_PRIO: missing
+>- CONFIG_CFQ_GROUP_IOSCHED: enabled
+>- CONFIG_BLK_CGROUP: enabled
+>- CONFIG_BLK_DEV_THROTTLING: enabled
+>- CONFIG_CGROUP_PERF: enabled
+>- CONFIG_CGROUP_HUGETLB: __missing__
+>- CONFIG_NET_CLS_CGROUP: __missing__
+>- CONFIG_CGROUP_NET_PRIO: __missing__
 >- CONFIG_CFS_BANDWIDTH: enabled
 >- CONFIG_FAIR_GROUP_SCHED: enabled
->- CONFIG_RT_GROUP_SCHED: missing
+>- CONFIG_RT_GROUP_SCHED: enabled
 >- CONFIG_IP_NF_TARGET_REDIRECT: enabled
 >- CONFIG_IP_VS: enabled
->- CONFIG_IP_VS_NFCT: missing
->- CONFIG_IP_VS_PROTO_TCP: missing
->- CONFIG_IP_VS_PROTO_UDP: missing
->- CONFIG_IP_VS_RR: missing
->- CONFIG_SECURITY_SELINUX: missing
->- CONFIG_SECURITY_APPARMOR: missing
+>- CONFIG_IP_VS_NFCT: __missing__
+>- CONFIG_IP_VS_PROTO_TCP: __missing__
+>- CONFIG_IP_VS_PROTO_UDP: __missing__
+>- CONFIG_IP_VS_RR: __missing__
+>- CONFIG_SECURITY_SELINUX: __missing__
+>- CONFIG_SECURITY_APPARMOR: __missing__
 >- CONFIG_EXT4_FS: enabled
 >- CONFIG_EXT4_FS_POSIX_ACL: enabled
 >- CONFIG_EXT4_FS_SECURITY: enabled
@@ -86,29 +90,29 @@ Supported kernel configs.
 >    - CONFIG_MACVLAN: enabled
 >    - CONFIG_DUMMY: enabled
 >  - "ftp,tftp client in container":
->    - CONFIG_NF_NAT_FTP: missing
->    - CONFIG_NF_CONNTRACK_FTP: missing
->    - CONFIG_NF_NAT_TFTP: missing
->    - CONFIG_NF_CONNTRACK_TFTP: missing
+>    - CONFIG_NF_NAT_FTP: __missing__
+>    - CONFIG_NF_CONNTRACK_FTP: __missing__
+>    - CONFIG_NF_NAT_TFTP: __missing__
+>    - CONFIG_NF_CONNTRACK_TFTP: __missing__
 >- Storage Drivers:
 >  - "aufs":
->    - CONFIG_AUFS_FS: missing
+>    - CONFIG_AUFS_FS: __missing__
 >  - "btrfs":
->    - CONFIG_BTRFS_FS: missing
->    - CONFIG_BTRFS_FS_POSIX_ACL: missing
+>    - CONFIG_BTRFS_FS: __missing__
+>    - CONFIG_BTRFS_FS_POSIX_ACL: __missing__
 >  - "devicemapper":
 >    - CONFIG_BLK_DEV_DM: enabled
 >    - CONFIG_DM_THIN_PROVISIONING: enabled
 >  - "overlay":
->    - CONFIG_OVERLAY_FS: missing
+>    - CONFIG_OVERLAY_FS: __missing__
 >  - "zfs":
->    - /dev/zfs: missing
->    - zfs command: missing
->    - zpool command: missing
+>    - /dev/zfs: __missing__
+>    - zfs command: __missing__
+>    - zpool command: __missing__
 >
 >Limits:
 >- /proc/sys/kernel/keys/root_maxkeys: 1000000
 
 Install:
 
-Flash zboot.img into boot partition.
+Flash __zboot.img__ into __boot__ partition.
